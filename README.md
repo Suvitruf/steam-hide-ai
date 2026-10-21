@@ -1,5 +1,7 @@
 # Steam Hide AI
 
+<p align="center"><img src="https://projects.cdn.aapanasik.com/steam-hide-ai/steam-no-ai.png" width="620" alt="Steam Hide AI: a userscript that hides AI-generated games on the Steam store. Full-page warning on a game page with an AI Generated Content Disclosure: why it was flagged, the developer's disclosure, and the Open anyway, Go back and Never hide this game buttons"></p>
+
 A userscript for Tampermonkey / Violentmonkey that hides games with AI-generated content on the Steam store: games that carry Steam's official **AI Generated Content Disclosure**, and optionally games reported by the community.
 
 **[Install the script](https://raw.githubusercontent.com/Suvitruf/steam-hide-ai/master/steam-hide-ai.user.js)** · [Русская версия](README.ru.md)
