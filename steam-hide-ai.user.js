@@ -2475,7 +2475,6 @@
 			"settings.overrides.neverHide": "Never hide these app IDs",
 			"settings.customKeywords": "Extra keywords (one per line, trailing * = prefix)",
 			"settings.listUrl": "Community list URL (empty = from the public dist repository)",
-			"settings.apiUrl": "Report API URL",
 			"settings.uiLanguage": "Interface language",
 			"settings.uiLanguage.auto": "Same as Steam",
 			"settings.save": "Save",
@@ -2581,7 +2580,6 @@
 			"settings.overrides.neverHide": "Никогда не скрывать эти app ID",
 			"settings.customKeywords": "Свои ключевые слова (по одному в строке, * в конце = префикс)",
 			"settings.listUrl": "Адрес списка сообщества (пусто = из публичного репозитория)",
-			"settings.apiUrl": "URL API репортов",
 			"settings.uiLanguage": "Язык интерфейса",
 			"settings.uiLanguage.auto": "Как в Steam",
 			"settings.save": "Сохранить",
@@ -3040,7 +3038,7 @@
 				expiresAt: new Date(rawAuth.expiresAt ?? 0).toISOString()
 			} : null,
 			session: session ? { steamId: session.steamId } : null,
-			apiUrl: ctx.settings.get().apiUrl,
+			customApiUrl: ctx.settings.get().apiUrl === "https://steam-ai-hide.apanasik.com" ? null : ctx.settings.get().apiUrl,
 			language: ctx.settings.get().uiLanguage
 		};
 	}
@@ -3437,28 +3435,20 @@
 			h("legend", {}, ["Overrides"]),
 			h("label", {}, [t("settings.overrides.alwaysHide"), h("textarea", { name: "alwaysHide" }, [s.overrides.alwaysHide.join(", ")])]),
 			h("label", {}, [t("settings.overrides.neverHide"), h("textarea", { name: "neverHide" }, [s.overrides.neverHide.join(", ")])])
-		]), h("fieldset", {}, [h("legend", {}, [t("settings.customKeywords")]), ...USAGE_CATEGORIES.map((c) => h("label", {}, [catName(c), h("textarea", { name: `kw_${c}` }, [(s.customKeywords[c] ?? []).join("\n")])]))]), h("fieldset", {}, [
-			h("legend", {}, ["API"]),
-			h("label", {}, [t("settings.apiUrl"), h("input", {
-				type: "text",
-				name: "apiUrl",
-				value: s.apiUrl
-			})]),
-			h("label", {}, [t("settings.uiLanguage"), h("select", { name: "uiLanguage" }, [
-				h("option", {
-					value: "auto",
-					...s.uiLanguage === "auto" ? { selected: true } : {}
-				}, [t("settings.uiLanguage.auto")]),
-				h("option", {
-					value: "en",
-					...s.uiLanguage === "en" ? { selected: true } : {}
-				}, ["English"]),
-				h("option", {
-					value: "ru",
-					...s.uiLanguage === "ru" ? { selected: true } : {}
-				}, ["Русский"])
-			])])
-		]), h("div", { class: "shai-modal__actions" }, [
+		]), h("fieldset", {}, [h("legend", {}, [t("settings.customKeywords")]), ...USAGE_CATEGORIES.map((c) => h("label", {}, [catName(c), h("textarea", { name: `kw_${c}` }, [(s.customKeywords[c] ?? []).join("\n")])]))]), h("fieldset", {}, [h("legend", {}, [t("settings.uiLanguage")]), h("label", {}, [h("select", { name: "uiLanguage" }, [
+			h("option", {
+				value: "auto",
+				...s.uiLanguage === "auto" ? { selected: true } : {}
+			}, [t("settings.uiLanguage.auto")]),
+			h("option", {
+				value: "en",
+				...s.uiLanguage === "en" ? { selected: true } : {}
+			}, ["English"]),
+			h("option", {
+				value: "ru",
+				...s.uiLanguage === "ru" ? { selected: true } : {}
+			}, ["Русский"])
+		])])]), h("div", { class: "shai-modal__actions" }, [
 			h("button", {
 				class: "shai-btn shai-btn--primary",
 				onclick: () => {
@@ -3532,12 +3522,17 @@
 			},
 			customKeywords,
 			listUrl: String(fd.get("listUrl") ?? "").trim(),
-			apiUrl: String(fd.get("apiUrl") ?? "").trim(),
+			apiUrl: prev.apiUrl,
 			uiLanguage: fd.get("uiLanguage")
 		});
 	}
 	function exportSettings(ctx) {
-		const blob = new Blob([JSON.stringify(ctx.settings.get(), null, 2)], { type: "application/json" });
+		const { apiUrl, ...rest } = ctx.settings.get();
+		const exported = apiUrl === "https://steam-ai-hide.apanasik.com" ? rest : {
+			...rest,
+			apiUrl
+		};
+		const blob = new Blob([JSON.stringify(exported, null, 2)], { type: "application/json" });
 		const a = h("a", {
 			href: URL.createObjectURL(blob),
 			download: "steam-hide-ai-settings.json"
