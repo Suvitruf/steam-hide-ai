@@ -30,7 +30,7 @@ On listings a hidden game turns into a small placeholder with the reason and a _
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Edge, Firefox, Safari, Opera) or [Violentmonkey](https://violentmonkey.github.io/). Greasemonkey is **not** supported: it lacks the APIs the script needs for shared storage and cross-origin requests.
 2. Open the [install link](https://raw.githubusercontent.com/Suvitruf/steam-hide-ai/master/steam-hide-ai.user.js) and confirm in your userscript manager.
-3. Open the [Steam store](https://store.steampowered.com/). The **AI filter** button in the store header and the _Steam Hide AI: settings_ entry in the userscript menu open the settings.
+3. Open the [Steam store](https://store.steampowered.com/). The red **No AI** icon in the store header (tooltip _AI filter_) and the _Steam Hide AI: settings_ entry in the userscript menu open the settings.
 
 Updates are automatic: the manager polls `steam-hide-ai.meta.js` for a new version.
 
@@ -85,4 +85,4 @@ Open an [issue](https://github.com/Suvitruf/steam-hide-ai/issues) for bugs, misc
 
 ## Credits and license
 
-The script is released under the [MIT License](LICENSE). The localized titles of Steam's disclosure block (30 languages) come from [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), also MIT. Steam is a trademark of Valve Corporation; this project is not affiliated with Valve.
+The script is released under the [MIT License](LICENSE). The localized titles of Steam's disclosure block (30 languages) come from [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), also MIT. The "No AI" icon is [No_AI_art.svg](https://commons.wikimedia.org/wiki/File:No_AI_art.svg) from Wikimedia Commons (public domain), recoloured for the dark header. Steam is a trademark of Valve Corporation; this project is not affiliated with Valve.

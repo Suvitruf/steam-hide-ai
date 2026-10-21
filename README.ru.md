@@ -30,7 +30,7 @@ Userscript для Tampermonkey / Violentmonkey, который скрывает 
 
 1. Установите [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Edge, Firefox, Safari, Opera) или [Violentmonkey](https://violentmonkey.github.io/). Greasemonkey **не** поддерживается: в нём нет API для общего хранилища и кросс-доменных запросов, которые нужны скрипту.
 2. Откройте [ссылку установки](https://raw.githubusercontent.com/Suvitruf/steam-hide-ai/master/steam-hide-ai.user.js) и подтвердите в менеджере скриптов.
-3. Откройте [магазин Steam](https://store.steampowered.com/). Кнопка **ИИ-фильтр** в шапке магазина и пункт _Steam Hide AI: настройки_ в меню менеджера открывают настройки.
+3. Откройте [магазин Steam](https://store.steampowered.com/). Красная иконка **No AI** в шапке магазина (подсказка _ИИ-фильтр_) и пункт _Steam Hide AI: настройки_ в меню менеджера открывают настройки.
 
 Обновления автоматические: менеджер проверяет новую версию по `steam-hide-ai.meta.js`.
 
@@ -85,4 +85,4 @@ Steam не обязывает разработчиков раскрывать и
 
 ## Благодарности и лицензия
 
-Скрипт распространяется по [лицензии MIT](LICENSE). Переводы заголовка блока disclosure в Steam (30 языков) взяты из [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), тоже MIT. Steam — товарный знак Valve Corporation; проект с Valve не связан.
+Скрипт распространяется по [лицензии MIT](LICENSE). Переводы заголовка блока disclosure в Steam (30 языков) взяты из [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), тоже MIT. Иконка «No AI» — [No_AI_art.svg](https://commons.wikimedia.org/wiki/File:No_AI_art.svg) с Wikimedia Commons (общественное достояние), перекрашена под тёмную шапку. Steam — товарный знак Valve Corporation; проект с Valve не связан.
