@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-21T00:00:00.000Z",
+  "threshold": {
+    "add": 5,
+    "remove": 3
+  },
+  "apps": {}
+}

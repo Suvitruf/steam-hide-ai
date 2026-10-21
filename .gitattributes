@@ -1,0 +1,5 @@
+# Published by the build pipeline; keep them out of language stats and collapsed in diffs.
+steam-hide-ai.user.js linguist-generated=true
+steam-hide-ai.meta.js linguist-generated=true
+community-list.json linguist-generated=true
+community-list.min.json linguist-generated=true
