@@ -83,6 +83,10 @@ Steam не обязывает разработчиков раскрывать и
 
 Ошибки, неверно классифицированные игры (укажите app ID и текст disclosure) и идеи — в [Issues](https://github.com/Suvitruf/steam-hide-ai/issues). К ошибкам приложите JSON из пункта _Steam Hide AI: диагностика_ в меню менеджера скриптов; персональных данных в нём нет.
 
+## Disclosure
+
+Этот скрипт создавался с помощью ИИ. Код, тесты и этот README написаны при помощи модели и проверены человеком перед релизом. Было бы странно об этом умолчать, учитывая специфику проекта 😅
+
 ## Благодарности и лицензия
 
 Скрипт распространяется по [лицензии MIT](LICENSE). Переводы заголовка блока disclosure в Steam (30 языков) взяты из [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), тоже MIT. Иконка «No AI» — [No_AI_art.svg](https://commons.wikimedia.org/wiki/File:No_AI_art.svg) с Wikimedia Commons (общественное достояние), перекрашена под тёмную шапку. Steam — товарный знак Valve Corporation; проект с Valve не связан.

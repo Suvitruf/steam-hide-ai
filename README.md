@@ -83,6 +83,10 @@ If the script saves you time, you can support its development:
 
 Open an [issue](https://github.com/Suvitruf/steam-hide-ai/issues) for bugs, misclassified games (include the app ID and the disclosure text) and ideas. For bugs, attach the JSON from the _Steam Hide AI: diagnostics_ entry in the userscript menu; it contains no personal data.
 
+## Disclosure
+
+This script was created with the help of AI. The code, the tests and this README were written together with model and reviewed by a human before release. It would be strange not to mention it, given the nature of the project 😅
+
 ## Credits and license
 
 The script is released under the [MIT License](LICENSE). The localized titles of Steam's disclosure block (30 languages) come from [seeeeew/aiwarningforsteam](https://github.com/seeeeew/aiwarningforsteam), also MIT. The "No AI" icon is [No_AI_art.svg](https://commons.wikimedia.org/wiki/File:No_AI_art.svg) from Wikimedia Commons (public domain), recoloured for the dark header. Steam is a trademark of Valve Corporation; this project is not affiliated with Valve.
